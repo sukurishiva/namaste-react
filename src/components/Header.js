@@ -1,5 +1,8 @@
 import { CDN_LOGO } from "../utils/server";
+import { useState } from "react";
+
 const Header=()=>{
+    const [loginButton,setLoginButton]=useState("login")
     return (
         <div className='header'>
             <div className='logo-container'>
@@ -11,6 +14,9 @@ const Header=()=>{
                     <li>Cart</li>
                     <li>About Us</li>
                     <li>Contact Us</li>
+                    <button className="login" onClick={()=>{
+                        loginButton==="login" ? setLoginButton("logout") :setLoginButton('login')
+                    }}>{loginButton}</button>
                 </ul>
             </div>
         </div>
